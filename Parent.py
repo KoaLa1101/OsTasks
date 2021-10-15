@@ -14,8 +14,9 @@ else:
         N = int(sys.argv[1]);
         for i in  range (0, N):
                 temp = os.fork();
-                if (temp > 0 & i == 0):
-                        print("The Pa process is pid=%d" % (os.getpid()));
+                if (temp > 0):
+                        if(i == 0):
+                                print("The Pa process is pid=%d" % (os.getpid()));
                 else:
                         sleep_rand = int(random.uniform(5, 11));
                         os.execl("./Child.py", "Child.py", str(sleep_rand));
