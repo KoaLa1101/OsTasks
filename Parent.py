@@ -18,8 +18,7 @@ else:
                         if(i == 0):
                                 print("The Pa process is pid=%d" % (os.getpid()));
                 else:
-                        sleep_rand = int(random.uniform(5, 11));
-                        os.execl("./Child.py", "Child.py", str(sleep_rand));
+                        os.execl("./Child.py", "Child.py", str(N));
                         break;
         for i in range (0, N):
                 ans = os.wait();
